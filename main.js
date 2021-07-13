@@ -11,6 +11,12 @@ new Vue({
         // welcomeGreet: () => {
         //     return 'Welcome to Vue!!!'
         // }
+        imgSrc: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/768px-Vue.js_Logo_2.svg.png",
+        imgAlt: "Vue Logo",
+        size: 50,
+        gitProfileLink: "https://github.com/bdmostafa",
+        vHtml: "<div>This is from v-html directive...</div>"
+
     },
     methods: {
         // welcomeGreet: function() {

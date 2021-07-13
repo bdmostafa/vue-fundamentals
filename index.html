@@ -15,7 +15,15 @@
         <p> {{ isDev }} </p>
         <p> {{ skills[0] }} </p>
         <p> Name: {{ obj.name }}, Profession: {{ obj.profession }} </p> -->
+        
+        <!-- Methods -->
         <p>{{ getInfo() }}</p>
+        <img v-bind:src="imgSrc" :alt="imgAlt" :style="{width: size + 'px'}">
+        <a :href="gitProfileLink" target="_blank" rel="noopener noreferrer">Visit my profile</a> 
+
+        <p v-text="message"></p>
+
+        <div v-html="vHtml"></div>
     </div>
     
     <script src="main.js"></script>
