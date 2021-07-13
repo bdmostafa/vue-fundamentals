@@ -8,8 +8,19 @@ new Vue({
             name: 'Mostafa',
             profession: 'Developer'
         },
+        // welcomeGreet: () => {
+        //     return 'Welcome to Vue!!!'
+        // }
+    },
+    methods: {
+        // welcomeGreet: function() {
+        //     return 'Welcome to Vue!!!'
+        // }
         welcomeGreet: () => {
             return 'Welcome to Vue!!!'
+        },
+        getInfo() {
+            return `I am ${this.obj.name}. ${this.message}`
         }
     }
 })
