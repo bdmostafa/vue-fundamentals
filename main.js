@@ -21,7 +21,7 @@ new Vue({
         // userType: "username",
         // userType: "email",
         userType: "new",
-
+        randomNumber: 1,
     },
     methods: {
         // welcomeGreet: function() {
@@ -32,6 +32,11 @@ new Vue({
         },
         getInfo() {
             return `I am ${this.obj.name}. ${this.message}`
+        },
+        generateRandomNumber() {
+            setTimeout(()=> {
+                this.randomNumber = Math.floor(Math.random() * 10) + 1
+            }, 1000);
         }
     }
 })
