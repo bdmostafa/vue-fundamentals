@@ -45,9 +45,34 @@
             <label>password</label>
             <input type="password" placeholder="Enter your password here" key="passwordInput">
         </template>
+        <!-- v-show - it renders to DOM although it is false (display: none) -->
+        <template v-show="userType === 'new'">
+            <h2>Welcome Guest!!!</h2>
+        </template>
 
+        <!-- Mapping an Array to Elements with v-for -->
+        <ul>
+            <li v-for="skill in skills" :key="skill">
+              {{ skill }}
+            </li>
+            <!-- With index -->
+            <li v-for="(skill, index) of skills" :key="skill">
+              {{ index }} - {{ skill }}
+            </li>
+        </ul>
 
+        <!-- v-for with an Object -->
+        <ul>
+            <li v-for="(item, key, index) in obj" :key="item">
+                {{ index }} - {{ key }} : {{ item }}
+            </li>
+            
+        </ul>
 
+        <!-- v-for with a Range -->
+        <div>
+            <span v-for="n in 10">{{ n }} </span>
+        </div>
     </div>
     
     <script src="main.js"></script>
