@@ -24,6 +24,30 @@
         <p v-text="message"></p>
 
         <div v-html="vHtml"></div>
+
+        <!-- Conditional rendering -->
+        <h1 v-if="awesome">Vue is awesome!</h1>
+        <h1 v-else>Oh no 😢</h1>
+
+        <!-- Controlling Reusable Elements with key -->
+        <template v-if="userType === 'username'">
+            <label>Username</label>
+            <input placeholder="Enter your username" key="nameInput">
+        </template>
+        <template v-else-if="userType === 'email'">
+            <label>Email</label>
+            <input placeholder="Enter your email address" key="emailInput">
+        </template>
+        <template v-else>
+            <h2>Create Account</h2>
+            <label>email</label>
+            <input placeholder="Enter your email address" key="newEmailInput">
+            <label>password</label>
+            <input type="password" placeholder="Enter your password here" key="passwordInput">
+        </template>
+
+
+
     </div>
     
     <script src="main.js"></script>

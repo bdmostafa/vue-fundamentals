@@ -15,7 +15,12 @@ new Vue({
         imgAlt: "Vue Logo",
         size: 50,
         gitProfileLink: "https://github.com/bdmostafa",
-        vHtml: "<div>This is from v-html directive...</div>"
+        vHtml: "<div>This is from v-html directive...</div>",
+
+        awesome: true,
+        // userType: "username",
+        // userType: "email",
+        userType: "new",
 
     },
     methods: {
