@@ -22,6 +22,8 @@ new Vue({
         // userType: "email",
         userType: "new",
         randomNumber: 1,
+        x: 0,
+        y: 0
     },
     methods: {
         // welcomeGreet: function() {
@@ -37,6 +39,10 @@ new Vue({
             setTimeout(()=> {
                 this.randomNumber = Math.floor(Math.random() * 10) + 1
             }, 1000);
+        },
+        getCoordinates(event) {
+            this.x = event.clientX;
+            this.y = event.clientY;
         }
     }
 })
