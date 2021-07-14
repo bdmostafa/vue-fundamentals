@@ -89,6 +89,17 @@
             <p>X: {{ x }}</p>
             <p>Y: {{ y }}</p>
         </div>
+
+        <!-- Argument & Modifier -->
+        <div>
+            <button v-on:click="addName('Mostafa', $event)">Add me</button>
+            <h2> {{ myName }} </h2>
+            <button v-on:click.right="addName('Mahmud', $event)">Add me with right click Modifier</button>
+        </div>
+        <form v-on:submit.prevent="onSubmit">
+            <input type="text" >
+            <button type="submit">Submit</button>
+        </form>
     </div>
     
     <script src="main.js"></script>

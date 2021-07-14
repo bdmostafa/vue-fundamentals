@@ -19,11 +19,12 @@ new Vue({
 
         awesome: true,
         // userType: "username",
-        // userType: "email",
+        // userType: "email", 
         userType: "new",
         randomNumber: 1,
         x: 0,
-        y: 0
+        y: 0,
+        myName: '',
     },
     methods: {
         // welcomeGreet: function() {
@@ -43,6 +44,13 @@ new Vue({
         getCoordinates(event) {
             this.x = event.clientX;
             this.y = event.clientY;
+        },
+        addName(name, event) {
+            this.myName = name;
+            console.log(event);
+        },
+        onSubmit() {
+            // code here
         }
     }
 })
