@@ -107,6 +107,20 @@
         </form>
         <p>Name: {{ formData.name }} </p>
         <p>Profession: {{ formData.profession }} </p>
+
+        <!-- Computed Properties -->
+        <button v-on:click="counter++">Increment Counter</button>
+        <button v-on:click="clicks++">Increment Click</button>
+        <!-- <p>Counter: {{ increment() }} </p>
+        <p>Clicks: {{ clicked() }} </p> -->
+        <p>Counter: {{ increment }} </p>
+        <p>Clicks: {{ clicked }} </p>
+        <button v-on:click="a++">Add to A</button>
+        <button v-on:click="b++">Add to B</button>
+        <!-- <p>Age + A = {{ addToAmethod() }}</p>
+        <p>Age + B = {{ addToBmethod() }}</p> -->
+        <p>Age + A = {{ addToAmethod }}</p>
+        <p>Age + B = {{ addToBmethod }}</p>
     </div>
     
     <script src="main.js"></script>

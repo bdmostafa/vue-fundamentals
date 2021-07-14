@@ -28,7 +28,12 @@ new Vue({
         formData: {
             name: '',
             profession: ''
-        }
+        },
+        counter: 0,
+        clicks: 0,
+        a: 0,
+        b: 0,
+        age: 20
     },
     methods: {
         // welcomeGreet: function() {
@@ -55,6 +60,40 @@ new Vue({
         },
         onSubmit() {
             console.log(this.formData)
+        },
+        // increment() {
+        //     console.log('increment')
+        //     return this.counter;
+        // },
+        // clicked() {
+        //     console.log('clicked')
+        //     return this.clicks;
+        // },
+        // addToAmethod: function(){
+        //     console.log('addToAmethod');
+        //     return this.a + this.age;
+        // },
+        // addToBmethod: function(){
+        //     console.log('addToBmethod');
+        //     return this.b + this.age;
+        // }
+    },
+    computed: {
+        increment() {
+            console.log('increment')
+            return this.counter;
+        },
+        clicked() {
+            console.log('clicked')
+            return this.clicks;
+        },
+        addToAmethod: function(){
+            console.log('addToAmethod');
+            return this.a + this.age;
+        },
+        addToBmethod: function(){
+            console.log('addToBmethod');
+            return this.b + this.age;
         }
     }
 })
