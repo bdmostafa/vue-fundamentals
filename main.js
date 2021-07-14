@@ -25,6 +25,10 @@ new Vue({
         x: 0,
         y: 0,
         myName: '',
+        formData: {
+            name: '',
+            profession: ''
+        }
     },
     methods: {
         // welcomeGreet: function() {
@@ -50,7 +54,7 @@ new Vue({
             console.log(event);
         },
         onSubmit() {
-            // code here
+            console.log(this.formData)
         }
     }
 })

@@ -97,9 +97,16 @@
             <button v-on:click.right="addName('Mahmud', $event)">Add me with right click Modifier</button>
         </div>
         <form v-on:submit.prevent="onSubmit">
-            <input type="text" >
+            <label>Name: </label>
+            <input type="text" v-model="formData.name" >
+
+            <label>Profession: </label>
+            <input type="text" v-model="formData.profession">
+
             <button type="submit">Submit</button>
         </form>
+        <p>Name: {{ formData.name }} </p>
+        <p>Profession: {{ formData.profession }} </p>
     </div>
     
     <script src="main.js"></script>
