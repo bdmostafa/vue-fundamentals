@@ -96,7 +96,9 @@
             <h2> {{ myName }} </h2>
             <button v-on:click.right="addName('Mahmud', $event)">Add me with right click Modifier</button>
         </div>
-        <form v-on:submit.prevent="onSubmit">
+        <!-- <form v-on:submit.prevent="onSubmit"> -->
+            <!-- Shorthand -->
+        <form @submit.prevent="onSubmit">
             <label>Name: </label>
             <input type="text" v-model="formData.name" >
 
@@ -115,14 +117,26 @@
         <p>Clicks: {{ clicked() }} </p> -->
         <p>Counter: {{ increment }} </p>
         <p>Clicks: {{ clicked }} </p>
-        <button v-on:click="a++">Add to A</button>
-        <button v-on:click="b++">Add to B</button>
+        <button @click="a++">Add to A</button>
+        <button @click="b++">Add to B</button>
         <!-- <p>Age + A = {{ addToAmethod() }}</p>
         <p>Age + B = {{ addToBmethod() }}</p> -->
         <p>Age + A = {{ addToAmethod }}</p>
         <p>Age + B = {{ addToBmethod }}</p>
+
+        <form @submit.prevent="send">
+            <input type="text" v-model="textForApp2"/>
+            <button type="submit">Send Data to App2</button>
+        </form>
     </div>
     
+    <hr />
+
+    <div id="app2">
+        This is app2 
+        <br />
+        Text from app1: {{ receivedMsg }}
+    </div>
     <script src="main.js"></script>
 </body>
 <style>

@@ -1,4 +1,4 @@
-new Vue({
+const app1 = new Vue({
     el: "#app-root",
     data: {
         message: "I am Vue Developer.",
@@ -33,7 +33,9 @@ new Vue({
         clicks: 0,
         a: 0,
         b: 0,
-        age: 20
+        age: 20,
+        textForApp2: '',
+
     },
     methods: {
         // welcomeGreet: function() {
@@ -76,7 +78,10 @@ new Vue({
         // addToBmethod: function(){
         //     console.log('addToBmethod');
         //     return this.b + this.age;
-        // }
+        // },
+        send() {
+            app2.receivedMsg = this.textForApp2;
+        }
     },
     computed: {
         increment() {
@@ -95,5 +100,12 @@ new Vue({
             console.log('addToBmethod');
             return this.b + this.age;
         }
+    }
+});
+
+const app2 = new Vue({
+    el: "#app2",
+    data: {
+        receivedMsg: ''
     }
 })
