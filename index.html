@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="vue.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script> -->
+    <!-- <script src="vue.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 </head>
+
 <body>
     <div id="app-root">
         <p> {{ welcomeGreet() }} </p>
@@ -15,11 +17,11 @@
         <p> {{ isDev }} </p>
         <p> {{ skills[0] }} </p>
         <p> Name: {{ obj.name }}, Profession: {{ obj.profession }} </p> -->
-        
+
         <!-- Methods -->
         <p>{{ getInfo() }}</p>
         <img v-bind:src="imgSrc" :alt="imgAlt" :style="{width: size + 'px'}">
-        <a :href="gitProfileLink" target="_blank" rel="noopener noreferrer">Visit my profile</a> 
+        <a :href="gitProfileLink" target="_blank" rel="noopener noreferrer">Visit my profile</a>
 
         <p v-text="message"></p>
 
@@ -53,11 +55,11 @@
         <!-- Mapping an Array to Elements with v-for -->
         <ul>
             <li v-for="skill in skills" :key="skill">
-              {{ skill }}
+                {{ skill }}
             </li>
             <!-- With index -->
             <li v-for="(skill, index) of skills" :key="skill">
-              {{ index }} - {{ skill }}
+                {{ index }} - {{ skill }}
             </li>
         </ul>
 
@@ -66,7 +68,7 @@
             <li v-for="(item, key, index) in obj" :key="item">
                 {{ index }} - {{ key }} : {{ item }}
             </li>
-            
+
         </ul>
 
         <!-- v-for with a Range -->
@@ -77,13 +79,13 @@
         <!-- v-once -->
         <div>
             <span v-once>{{ randomNumber }} </span>
-            <span >{{ randomNumber }} </span>
+            <span>{{ randomNumber }} </span>
             <!-- {{ generateRandomNumber() }} -->
             <!-- v-on:click -->
             <button v-on:click="generateRandomNumber">Generate Random Number</button>
-            
+
         </div>
-        
+
         <!-- v-on:mouse -->
         <div v-on:mousemove="getCoordinates" class="coordinates-area">
             <p>X: {{ x }}</p>
@@ -97,10 +99,10 @@
             <button v-on:click.right="addName('Mahmud', $event)">Add me with right click Modifier</button>
         </div>
         <!-- <form v-on:submit.prevent="onSubmit"> -->
-            <!-- Shorthand -->
+        <!-- Shorthand -->
         <form @submit.prevent="onSubmit">
             <label>Name: </label>
-            <input type="text" v-model="formData.name" >
+            <input type="text" v-model="formData.name">
 
             <label>Profession: </label>
             <input type="text" v-model="formData.profession">
@@ -125,19 +127,45 @@
         <p>Age + B = {{ addToBmethod }}</p>
 
         <form @submit.prevent="send">
-            <input type="text" v-model="textForApp2"/>
+            <input type="text" v-model="textForApp2" />
             <button type="submit">Send Data to App2</button>
         </form>
-    </div>
-    
-    <hr />
 
-    <div id="app2">
-        This is app2 
-        <br />
-        Text from app1: {{ receivedMsg }}
-    </div>
-    <script src="main.js"></script>
+
+        <div>
+            <h2>All Tasks</h2>
+            <ul>
+                <li v-for="task in tasks" v-text="task.name" :key="task"></li>
+            </ul>
+
+            <h2>Completed Tasks</h2>
+            <ul>
+                <li v-for="task in tasks" v-if="task.completed" v-text="task.name" :key="task"></li>
+            </ul>
+
+            <h2>Uncompleted Tasks ID</h2>
+            <ul>
+                <li v-for="task in tasks" v-if="!task.completed" v-text="task.id" :key="task"></li>
+            </ul>
+
+            <h2>Uncompleted Tasks ID (using computed property)</h2>
+            <ul>
+                <li v-for="task in uncompleted" v-text="task.id" :key="task"></li>
+            </ul>
+            <div>
+
+            </div>
+
+
+
+            <hr />
+
+            <div id="app2">
+                This is app2
+                <br />
+                Text from app1: {{ receivedMsg }}
+            </div>
+            <script src="main.js"></script>
 </body>
 <style>
     .coordinates-area {
@@ -149,4 +177,5 @@
         border-radius: 5px;
     }
 </style>
+
 </html>

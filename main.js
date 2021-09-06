@@ -35,6 +35,13 @@ const app1 = new Vue({
         b: 0,
         age: 20,
         textForApp2: '',
+        tasks: [
+            { id: 1, name: 'abc', completed: false },
+            { id: 2, name: 'xyz', completed: true },
+            { id: 3, name: 'efg', completed: false },
+            { id: 4, name: 'mno', completed: false },
+            { id: 5, name: 'efo', completed: true },
+        ],
 
     },
     methods: {
@@ -48,7 +55,7 @@ const app1 = new Vue({
             return `I am ${this.obj.name}. ${this.message}`
         },
         generateRandomNumber() {
-            setTimeout(()=> {
+            setTimeout(() => {
                 this.randomNumber = Math.floor(Math.random() * 10) + 1
             }, 1000);
         },
@@ -92,13 +99,16 @@ const app1 = new Vue({
             console.log('clicked')
             return this.clicks;
         },
-        addToAmethod: function(){
+        addToAmethod: function () {
             console.log('addToAmethod');
             return this.a + this.age;
         },
-        addToBmethod: function(){
+        addToBmethod: function () {
             console.log('addToBmethod');
             return this.b + this.age;
+        },
+        uncompleted() {
+            return this.tasks.filter(task => !task.completed)
         }
     }
 });
