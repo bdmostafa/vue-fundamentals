@@ -9,45 +9,26 @@
   <!-- <script src="vue.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+
+  <style>
+    body {
+      padding: 30px;
+    }
+  </style>
+
 </head>
 
 <body>
   <div id="app-root" class="container">
-    <!-- <ul id="tabs">
-         <li><a href="#">Home</a></li>
-         <li><a href="#about">About</a></li>
-         <li><a href="#">Support</a></li>
-         <li><a href="#">Contact</a></li>
-       </ul>
 
-       <div id="tab-panels">
+    <!-- <coupon v-on:applied="onCouponApplied"></coupon> -->
+    <coupon @applied="onCouponApplied"></coupon>
 
-       </div> -->
+    <h3 v-if="couponApplied">You used a coupon</h3>
 
-    <tabs>
-      <tab name="Home" :selected="true">
-        <h2>This is the content of home tab</h2>
-      </tab>
-
-      <tab name="About Us">
-        <h2>This is the content of about tab</h2>
-      </tab>
-
-      <tab name="Support">
-        <h2>This is the content of support tab</h2>
-      </tab>
-
-      <tab name="Contact Us">
-        <h2>This is the content of contact tab</h2>
-      </tab>
-    </tabs>
   </div>
   <script src="main.js"></script>
 </body>
-<style>
-  #app-root {
-    padding-top: 20px;
-  }
-</style>
+
 
 </html>
