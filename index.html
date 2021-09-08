@@ -2,45 +2,52 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Components</title>
-    <!-- <script src="vue.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Components with Tabs</title>
+  <!-- <script src="vue.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
 </head>
 
 <body>
-    <div id="app-root" class="container">
+  <div id="app-root" class="container">
+    <!-- <ul id="tabs">
+         <li><a href="#">Home</a></li>
+         <li><a href="#about">About</a></li>
+         <li><a href="#">Support</a></li>
+         <li><a href="#">Contact</a></li>
+       </ul>
 
-        <!-- <article class="message">
-            <div class="message-header">
-              <p>Hello World</p>
-              <button class="delete" aria-label="delete"></button>
-            </div>
-            <div class="message-body">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
-            </div>
-          </article> -->
+       <div id="tab-panels">
 
-          <message title="Hello Vue JS" body="Lorem ipsum dolor sit amet, consect-"></message>
+       </div> -->
 
-          <!-- <message title="Hello JS" body="js js js js js..........."></message>
+    <tabs>
+      <tab name="Home" :selected="true">
+        <h2>This is the content of home tab</h2>
+      </tab>
 
-          <message title="Hello Mostafa" body="Lbla bla bla .................."></message> -->
+      <tab name="About Us">
+        <h2>This is the content of about tab</h2>
+      </tab>
 
-          <button @click="showModal = true">Show Modal</button>
+      <tab name="Support">
+        <h2>This is the content of support tab</h2>
+      </tab>
 
-          <modal v-if="showModal" @close="showModal = false" body="Modal body text here... "></modal>
-
-    </div>
-    <script src="main.js"></script>
+      <tab name="Contact Us">
+        <h2>This is the content of contact tab</h2>
+      </tab>
+    </tabs>
+  </div>
+  <script src="main.js"></script>
 </body>
 <style>
-    #app-root {
-        font-size: .4rem;
-    }
+  #app-root {
+    padding-top: 20px;
+  }
 </style>
 
 </html>
