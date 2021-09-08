@@ -26,9 +26,13 @@
 
           <message title="Hello Vue JS" body="Lorem ipsum dolor sit amet, consect-"></message>
 
-          <message title="Hello JS" body="js js js js js..........."></message>
+          <!-- <message title="Hello JS" body="js js js js js..........."></message>
 
-          <message title="Hello Mostafa" body="Lbla bla bla .................."></message>
+          <message title="Hello Mostafa" body="Lbla bla bla .................."></message> -->
+
+          <button @click="showModal = true">Show Modal</button>
+
+          <modal v-if="showModal" @close="showModal = false" body="Modal body text here... "></modal>
 
     </div>
     <script src="main.js"></script>
