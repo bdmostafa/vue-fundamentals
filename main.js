@@ -1,42 +1,25 @@
-// For event dispatch
-// window.Event = new Vue();
-
-// To remove dollar sign $ on $emit and $on
-window.Event = new class {
-    constructor() {
-        this.vue = new Vue();
-    }
-
-    fire(event, data = null) {
-        this.vue.$emit(event, data)
-    }
-
-    listen (event, callback) {
-        this.vue.$on(event, callback)
-    }
-}
-
-Vue.component("coupon", {
-  template:
-    '<input placeholder="Enter the coupon code" @blur="onCouponApplied">',
-
-  methods: {
-    onCouponApplied() {
-    //   Event.$emit("applied");
-    Event.fire('applied');
-    },
-  },
+Vue.component("modal", {
+  template: `
+    <div style="padding: 50px;" class="modal is-active">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">
+         <slot name="header"></slot>
+        </p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <slot name="content"></slot>
+      </section>
+      <footer class="modal-card-foot">
+        <slot name="footer"></slot>
+      </footer>
+    </div>
+  </div>
+  `,
 });
 
 new Vue({
   el: "#app-root",
-
-  data: {
-    couponApplied: false,
-  },
-
-  created() {
-    // Event.$on("applied", () => alert("applied successfully........"));
-    Event.listen('applied', () => alert("applied successfully........"));
-  },
 });

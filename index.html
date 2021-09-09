@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Components with Tabs</title>
+    <!-- <script src="vue.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Components with Tabs</title>
-  <!-- <script src="vue.js"></script> -->
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+    <style>
+      body {
+        margin: 0 auto;
+      }
+    </style>
+  </head>
 
-  <style>
-    body {
-      padding: 30px;
-    }
-  </style>
-
-</head>
-
-<body>
-  <div id="app-root" class="container">
-
-    <!-- <coupon v-on:applied="onCouponApplied"></coupon> -->
-    <coupon @applied="onCouponApplied"></coupon>
-
-    <h3 v-if="couponApplied">You used a coupon</h3>
-
-  </div>
-  <script src="main.js"></script>
-</body>
-
-
+  <body>
+    <div id="app-root" class="container">
+      <modal>
+        <template slot="header">Modal Title</template>
+        <template slot="content">Modal contents here...</template>
+        <template slot="footer">
+          <button class="button is-success">Save changes</button>
+          <button class="button">Cancel</button>
+        </template>
+      </modal>
+    </div>
+    <script src="main.js"></script>
+  </body>
 </html>
