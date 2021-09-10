@@ -1,20 +1,30 @@
 <template>
   <div id="app">
-    <message> Hello Vue 2! </message>
+    
+    <!-- <input type="text" v-model="coupon" /> -->
 
-    <message> Hello Vue 3! </message>
+    <!-- Its the same thing as v-model -->
+    <!-- <input type="text" :value="coupon" @input="coupon = $event.target.value" /> -->
+
+<coupon v-model="coupon"></coupon>
+
   </div>
 </template>
 
 <script>
-import Message from "./components/Message.vue";
+import Coupon from "./components/Coupon.vue";
 
 export default {
   name: "app",
 
-  data() {},
+  data() {
+    return {
+      coupon: 'FREEBIE',
+    }
+    
+  },
 
-  components: { Message }
+  components: { Coupon }
 };
 </script>
 
